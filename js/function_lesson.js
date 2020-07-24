@@ -97,12 +97,15 @@ function isTwo(input) {
  * then display the dollar amount they should tip
  */
 
-function calculateTip(tip, billTotal) {
+
+function conversion() {
     var billTotal = parseFloat(prompt("What was the price of the meal?"));
     var tip = parseFloat(prompt("How much percentage would you like to tip?"));
     var tipConversion = parseInt(tip) /100;
-    console.log(tipConversion);
-    return alert("Your tip amount is: $" + (tipConversion * billTotal));
+    calculateTip(tipConversion, billTotal);
+}
+function calculateTip(tip, billTotal) {
+    return alert("Your tip amount is: $" + (tip * billTotal).toFixed(2));
 };
 
 
@@ -121,20 +124,34 @@ function calculateTip(tip, billTotal) {
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(originalPrice, discountPercent) {
+// function applyDiscount(originalPrice, discountPercent) {
+//     var originalPrice = parseFloat(prompt("What was the original price?"));
+//         console.log("OPrice", originalPrice);
+//     var discountPercent = parseFloat(prompt("What is the discount percent?"));
+//         console.log("DPercent",discountPercent);
+//     var discountedPrice = originalPrice - (originalPrice * (discountPercent / 100));
+//         console.log("DPrice",discountedPrice);
+//     if (originalPrice >= 50) {
+//         return alert("Discount Applied, your total cost is: $" + discountedPrice.toFixed(2));
+//     } else {
+//         return alert("You are not eligible for this discount.")
+//     }
+// };
+function discountConversion() {
     var originalPrice = parseFloat(prompt("What was the original price?"));
-        console.log("OPrice", originalPrice);
+    console.log("OPrice", originalPrice);
     var discountPercent = parseFloat(prompt("What is the discount percent?"));
-        console.log("DPercent",discountPercent);
+    console.log("DPercent",discountPercent);
     var discountedPrice = originalPrice - (originalPrice * (discountPercent / 100));
-        console.log("DPrice",discountedPrice);
+    console.log("DPrice",discountedPrice);
+    applyDiscount(originalPrice, discountedPrice);
+}
+function applyDiscount(originalPrice, discountedPrice) {
     if (originalPrice >= 50) {
         return alert("Discount Applied, your total cost is: $" + discountedPrice.toFixed(2));
     } else {
         return alert("You are not eligible for this discount.")
     }
-};
-
-
+}
 
 })();
