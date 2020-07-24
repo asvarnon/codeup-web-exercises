@@ -1,5 +1,5 @@
 "use strict";
-//(function(){
+(function(){
 
     /**
  * TODO:
@@ -137,4 +137,4 @@ function applyDiscount(originalPrice, discountPercent) {
 
 
 
-//})();
+})();
