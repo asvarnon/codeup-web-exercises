@@ -1,5 +1,5 @@
 "use strict";
-//(function (){
+(function (){
 
 
 function numberToSkip() {
@@ -27,19 +27,4 @@ function numberToSkip() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//})();
+})();
