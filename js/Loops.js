@@ -1,5 +1,5 @@
 "use strict";
-// (function(){
+(function(){
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Lecture~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -83,13 +83,32 @@ function showMultiplicationTable(number) {
 }
 
 
-for (var i = 1; i <= 10; i++) {
-    var random = (Math.random() * (200 - 20) + 20).toFixed(0);
-    console.log("random number #" + i + ": " + random);
-    if (random % 2 ===0) {
-        console.log(random + " is Even");
-    } else {
-        console.log(random + " is Odd");
+function randomEvenOrOdd() {
+    for (var i = 1; i <= 10; i++) {
+        var random = (Math.random() * (200 - 20) + 20).toFixed(0);
+        console.log("random number #" + i + ": " + random);
+        // var state = (random % 2 === 0 ? "even" : "odd");   TERNARY FOR IF/ELSE
+        if (random % 2 === 0) {
+            console.log(random + " is Even");
+        } else {
+            console.log(random + " is Odd");
+        }
+    }
+}
+
+function increasingOutput(){
+    for (var i = 1; i < 10; i++) {
+        var pyramidLevel = i.toString();
+        for (var y = 1; y < i; y++){
+            pyramidLevel += i;
+        }
+        console.log(pyramidLevel);
+    }
+}
+
+function decreaseByFive(){
+    for (var i = 100; i > 0; i-=5) {
+        console.log(i);
     }
 }
 
@@ -103,8 +122,4 @@ for (var i = 1; i <= 10; i++) {
 
 
 
-
-
-
-
-//})()
+})()
