@@ -96,15 +96,24 @@ function randomEvenOrOdd() {
     }
 }
 
-function increasingOutput(){
-    for (var i = 1; i < 10; i++) {
-        var pyramidLevel = i.toString();
-        for (var y = 1; y < i; y++){
-            pyramidLevel += i;
-        }
-        console.log(pyramidLevel);
+// function increasingOutput(){
+//     for (var i = 1; i < 10; i++) {
+//         var pyramidLevel = i.toString();
+//         for (var y = 1; y < i; y++){
+//             pyramidLevel += i;
+//         }
+//         console.log(pyramidLevel);
+//     }
+// }
+
+function increasingOutputFER() {
+    for (var z = 1; z <= 9; z++){
+        console.log(z.toString().repeat(z));
     }
 }
+
+
+
 
 function decreaseByFive(){
     for (var i = 100; i > 0; i-=5) {
