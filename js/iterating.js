@@ -42,6 +42,12 @@
      * Refactor your above code to use a `forEach` loop
      */
 
+    function namesForEach(){
+        names.forEach(function (name, i, array) {
+            console.log(names[i]);
+        });
+    };
+
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -55,5 +61,24 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
+    var numbersArray = [1, 2, 3, 4, 5];
+    //var randomElement = numbersArray[Math.floor(Math.random()*numbersArray.length)];
+    function firstFunction() {
+        console.log(numbersArray[0]);
+    }
+
+    function secondFunction() {
+        console.log(numbersArray[1]);
+    }
+
+    function lastFunction() {
+        console.log(numbersArray[4]);
+    }
+
+
+
+
+
 
 //})();
