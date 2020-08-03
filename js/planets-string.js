@@ -1,4 +1,4 @@
-//(function(){
+(function(){
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
@@ -24,11 +24,11 @@
      * string, and <li> tags around each planet.
      */
 
-    planetsArray.join("<br>");
-    console.log(planetsArray);
+    var planetString2 = planetsArray.join("<br>");
+    console.log(planetString2);
 
 
 
 
 
-//})();
+})();

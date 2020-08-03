@@ -1,4 +1,4 @@
-//(function (){
+(function (){
 "use strict";
 
 var planets = [
@@ -60,5 +60,4 @@ console.log("Q7" ,planets);
 
 
 
-
-//})();
+})();
