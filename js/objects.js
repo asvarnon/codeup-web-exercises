@@ -57,10 +57,17 @@
         {name: 'George', amount: 320}
     ];
 
-    // const discountAmount = (discountPercent, totalPrice) => {
-    //
-    //     return
-    // }
+    const discountPercent = (amount) => {
+        return (12 /100) * parseFloat(amount).toFixed(2);
+    };
+    const applyDiscount = () => {
+        if (shoppers.amount > 200) {
+            console.log("Discount applied, enjoy your purchase " + shoppers.name + "!");
+            console.log(discountPercent());
+        }
+
+    }
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
