@@ -1,4 +1,4 @@
-//(function() {
+(function() {
     "use strict";
 
     /**
@@ -30,10 +30,10 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    const sayHello = () => {
-        console.log("Hello, my name is " + person.firstName + " " + person.lastName);
+    person.sayHello = function () {
+        return "Hello, my name is " + person.firstName + " " + person.lastName;
     };
-    console.log(sayHello());
+    console.log(person.sayHello());
 
 
 
@@ -57,16 +57,24 @@
         {name: 'George', amount: 320}
     ];
 
-    const discountPercent = (amount) => {
+    function discountAmount(amount) {
         return (12 /100) * parseFloat(amount).toFixed(2);
     };
-    const applyDiscount = () => {
-        if (shoppers.amount > 200) {
-            console.log("Discount applied, enjoy your purchase " + shoppers.name + "!");
-            console.log(discountPercent());
-        }
 
-    }
+    //use forEach
+    shoppers.forEach(function (shopper) {
+            if (shopper.amount > 200) {
+                console.log("Discount applied, enjoy your purchase " + shopper.name + "!");
+                console.log("Your original amount was: $" + shopper.amount.toFixed(2));
+                console.log("Your new price is: $" + (shopper.amount - discountAmount(shopper.amount).toFixed(2)));
+                return shopper.amount - discountAmount(shopper.amount)
+            }
+            console.log(shopper.name + ", you did not qualify for the discount.");
+            console.log("Your total amount is: $" + shopper.amount.toFixed(2));
+        }
+    );
+
+
 
 
     /** TODO:
@@ -81,6 +89,36 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    let books = [
+        {title: "Harry Potter",
+            author: {
+                firstName:"J.K.",
+                lastName:"Rowling"
+            }},
+        {title: "The way of Shadows",
+            author:{
+                firstName: "Brent",
+                lastName: "Weeks"
+            }},
+        {title: "Hatchet",
+            author: {
+                firstName: "Gary",
+                lastName: "Paulson"
+            }},
+        {title: "The Amazing Spiderman",
+            author: {
+                firstName: "Stan",
+                lastName: "Lee"
+            }},
+        {title: "Cat and the Hat",
+            author: {
+                firstName: "Dr.",
+                lastName: "Suess"
+            }}
+    ]
+
+
 
     /**
      * TODO:
@@ -107,6 +145,12 @@
      *      ...
      */
 
+    books.forEach(function (book){
+        console.log("Book #: " + books.indexOf(book));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    })
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -118,4 +162,4 @@
      *   `showBookInfo` function.
      */
 
-//})();
+})();
