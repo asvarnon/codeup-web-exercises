@@ -1,4 +1,4 @@
-(function() {
+//(function() {
     "use strict";
 
     /**
@@ -30,7 +30,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    person.sayHello = function () {
+    person.sayHello = () => {
         return "Hello, my name is " + person.firstName + " " + person.lastName;
     };
     console.log(person.sayHello());
@@ -62,17 +62,19 @@
     };
 
     //use forEach
-    shoppers.forEach(function (shopper) {
-            if (shopper.amount > 200) {
-                console.log("Discount applied, enjoy your purchase " + shopper.name + "!");
-                console.log("Your original amount was: $" + shopper.amount.toFixed(2));
-                console.log("Your new price is: $" + (shopper.amount - discountAmount(shopper.amount).toFixed(2)));
-                return shopper.amount - discountAmount(shopper.amount)
+    function discountChecker(shoppers) {
+        shoppers.forEach(function (shopper) {
+                if (shopper.amount > 200) {
+                    console.log("Discount applied, enjoy your purchase " + shopper.name + "!");
+                    console.log("Your original amount was: $" + shopper.amount.toFixed(2));
+                    console.log("Your new price is: $" + (shopper.amount - discountAmount(shopper.amount).toFixed(2)));
+                    return shopper.amount - discountAmount(shopper.amount)
+                }
+                console.log(shopper.name + ", you did not qualify for the discount.");
+                console.log("Your total amount is: $" + shopper.amount.toFixed(2));
             }
-            console.log(shopper.name + ", you did not qualify for the discount.");
-            console.log("Your total amount is: $" + shopper.amount.toFixed(2));
-        }
-    );
+        )
+    };
 
 
 
@@ -145,11 +147,29 @@
      *      ...
      */
 
-    books.forEach(function (book){
-        console.log("Book #: " + books.indexOf(book));
-        console.log("Title: " + book.title);
-        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-    })
+
+    //------------------------forEach------------------
+    // function bookLog (books) {
+    //     books.forEach(function (book) {
+    //         console.log("Book #: " + books.indexOf(book));
+    //         console.log("Title: " + book.title);
+    //         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     })
+    // }
+
+
+    //--------------------------------For Loop------------------------
+    function loggingBooks (booksArray) {
+        for (let x = 0; x < booksArray.length; x++) {
+            let book = booksArray[x];
+            console.log("Book #: " + (x + 1));
+            console.log("Title: " + book.title);
+            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+            console.log("---");
+        }
+    }
+
+    //loggingBooks(books);
 
     /**
      * Bonus:
@@ -162,4 +182,19 @@
      *   `showBookInfo` function.
      */
 
-})();
+    function createBook(title, authorFirstName, authorLastName, booksArray){
+        let newBook = {
+            title: title,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        }
+        booksArray.push(newBook);
+        return booksArray;
+    }
+
+    createBook("Dune", "Frank", "Herbert", books);
+    loggingBooks(books);
+
+//})();
