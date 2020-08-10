@@ -1,0 +1,15 @@
+
+h1 {
+    color: navy;
+    background-color: antiquewhite;
+}
+h3 {
+    color: navy;
+    background-color: antiquewhite;
+}
+
+.fancy-header {
+    color: blue; /* single line comment */
+    text-decoration: underline;
+}
+
