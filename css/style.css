@@ -1,16 +1,27 @@
 
-/*h1 {*/
-/*    color: purple;*/
-/*    background-color: antiquewhite;*/
-/*}*/
-h3 {
+#container h1,#container h3 {
     color: navy;
     background-color: antiquewhite;
+    text-align: center;
 }
 
 .fancy-header {
     color: blue; /* single line comment */
     text-decoration: underline;
-    font-size: 100px;
 }
+
+
+/*can combine classes just with a space*/
+/*cursor: pointer;  is an option for links*/
+.xl {
+    font-size: 80px;
+}
+
+ol { list-style: upper-alpha; }
+ul { list-style: square; }
+
+
+
+
+
 
