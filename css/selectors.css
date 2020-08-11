@@ -47,11 +47,12 @@ body {
     font-family: 'Source Code Pro', monospace;
 }
 
-table, table>tr>td {
+table, th, td {
     text-align: center;
     font-size: 1.5em;
-    padding: 40px;
-    /*margin-left: 340px;*/
+    padding: 10px;
+    border: 3px lawngreen;
+
 }
 
 /* unvisited link (:link) */
