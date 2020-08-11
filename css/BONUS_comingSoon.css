@@ -4,11 +4,29 @@
 
 body {
     background-image: url("../img/forest.jpg");
+    background-repeat: no-repeat;
+    background-size: 1500px;
+    font-family: Raleway, sans-serif;
+    color: white;
 }
 
+.coming-soon-display {
+    margin-top: 11em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
 
+.days-left-display {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 18em;
+}
 
-
+.line-properties {
+    width: 20%;
+}
 
 
 
