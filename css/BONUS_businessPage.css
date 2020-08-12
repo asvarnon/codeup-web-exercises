@@ -1,0 +1,76 @@
+
+body {
+    margin: 0;
+    font-family: Lato, sans-serif;
+}
+
+nav {
+    margin: 0;
+    background-color: #db5141;
+    color: white;
+    padding: 16px 0px;
+}
+
+.navAnchor {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 1em;
+    /*border: 1px solid black;*/
+}
+
+/* unvisited link (:link) */
+a:link {
+    color:white;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:lightgray;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:black;
+    cursor: pointer;
+    background-color: white;
+}
+
+main {
+    width: 1000px;
+}
+
+header {
+    background-color: #db5141;
+    margin: 0;
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    background-color: #db5141;
+    margin: 0;
+    padding-top: 10%;
+    font-weight: lighter;
+    font-size: 4em;
+}
+
+.headerText {
+    color: white;
+    text-align: center;
+}
+
+.headerButton {
+    alignment: center;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+    padding: 1em 2em;
+}
+
+
+
+
+
