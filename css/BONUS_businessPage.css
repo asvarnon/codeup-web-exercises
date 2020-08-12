@@ -70,6 +70,27 @@ h1 {
     padding: 1em 2em;
 }
 
+img {
+    width: 50%;
+    height: auto;
+}
+
+#anchor {
+    float: right;
+}
+
+#coffeeCup {
+    float: left;
+}
+
+.mainSectionAnchor {
+    padding: 3em;
+    width: 100%;
+}
+
+.mainSectionCup {
+
+}
 
 
 
