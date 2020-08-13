@@ -54,7 +54,8 @@ a {
 }
 .profile-form {
     /* TODO: figure this part out.*/
-    line-height: 50px;
+    line-height: 80px;
+    /*float: right;*/
 }
 .profile-image {
     position: absolute;
@@ -83,17 +84,44 @@ a {
     color: var(--main-link-color);
 }
 .profile-details {
-    width: 25%;
+    width: calc(25% - 1em);
     margin: 0 .5em;
     float: left;
 }
 .timeline {
-    width: 50%;
+    width: calc(50% - 1em);
     margin: 0 .5em;
     float: left;
 }
 .who-to-follow {
-    width: 25%;
+    width: calc(25% - 1em);
     margin: 0 .5em;
     float: left;
 }
+.container {
+    margin: 2em 0;
+}
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border: var(--separator-color) 1px solid;
+    padding: .5em;
+    overflow: auto;
+}
+.media-image {
+    width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
+}
+.profile-items {
+    padding: 0;
+    margin: .5em;
+    list-style: none;
+    /*referencing the .nav class for list style*/
+}
+
+
