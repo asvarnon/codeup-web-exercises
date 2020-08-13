@@ -53,7 +53,6 @@ a {
     background: var(--light-bg);
 }
 .profile-form {
-    /* TODO: figure this part out.*/
     line-height: 80px;
     /*float: right;*/
 }
