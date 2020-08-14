@@ -15,8 +15,6 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, Ubuntu, sans-serif;
-    display:flex;
-    flex-direction: column;
 }
 header {
     background-image: url("https://picsum.photos/1200/300");
@@ -29,24 +27,21 @@ a {
 }
 .top-nav {
     background: var(--light-bg);
-    display: flex;
-    flex-direction: row;
 }
 .nav {
-    position: fixed;
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: row;
+}
+.nav-item{
+    padding: 1.5em;
 }
 .nav-link {
     color: var(--main-link-color);
     font-weight: bold;
     text-decoration: none;
-}
-.nav-item {
-    flex-direction: row;
-    padding: 1.5em;
 }
 .nav-link:hover {
     color: var(--link-color);
@@ -54,13 +49,14 @@ a {
 .profile {
     background: var(--light-bg);
     display: flex;
-    justify-content: space-around;
 }
 .profile-header{
-  flex-grow: 1;
+    flex-grow: 1;
+    height: 80px;
+    display: flex;
 }
 .profile-form{
-align-self: center;
+    align-self: center;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -77,6 +73,10 @@ align-self: center;
 .img-circle {
     border-radius: 100%;
     border: 4px solid var(--light-bg);
+    align-self: center;
+}
+.profile-image{
+
 }
 .text-right {
     text-align: right;
