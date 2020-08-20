@@ -1,0 +1,10 @@
+.nav-link {
+    color: black;
+}
+.jumbotron {
+    background-image: url("../img/pizza.png");
+}
+h1 {
+    color: #4f4f4f;
+    background: rgba(255, 255, 255, 0.6);
+}
