@@ -9,3 +9,14 @@ h1 {
     background: rgba(255, 255, 255, 0.6);
     text-align: center;
 }
+.card-header {
+    background-color: #0279f6;
+    color: white;
+}
+.card-footer {
+    padding-left: 85%;
+}
+h5.card-header {
+    background-color: #f0f0f0;
+    color: black;
+}
