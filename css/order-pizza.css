@@ -14,7 +14,8 @@ h1 {
     color: white;
 }
 .card-footer {
-    padding-left: 85%;
+    display: flex;
+    justify-content: flex-end;
 }
 h5.card-header {
     background-color: #f0f0f0;
