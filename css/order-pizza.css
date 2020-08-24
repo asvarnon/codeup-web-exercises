@@ -4,6 +4,10 @@
 .jumbotron {
     background-image: url("../img/pizza.png");
 }
+#main-jumbo {
+    padding-left: 0;
+    padding-right: 0;
+}
 h1 {
     color: #4f4f4f;
     background: rgba(255, 255, 255, 0.6);
@@ -20,4 +24,14 @@ h1 {
 h5.card-header {
     background-color: #f0f0f0;
     color: black;
+}
+h5.card-title {
+    padding-left: 1em;
+}
+.inside-tables {
+    padding-left: 0;
+    padding-right: 0;
+}
+div.card-body.inside-tables {
+    padding-bottom: 0;
 }
