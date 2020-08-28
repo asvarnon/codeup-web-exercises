@@ -27,12 +27,16 @@
         detonationTimer--;
     }, 1000);
 
+    //OR
+    // var countDownInterval = setInterval(updateTimer, 1000);
+
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
         if (detonationTimer > 0) {
             clearInterval(updateTimer);
             alert("You stopped the clock!");
+            // OR clearInterval(countDownInterval);
         }
     }
 
