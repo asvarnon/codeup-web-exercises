@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn1">Click me!</button>
+<button id="btn2">Close Window</button>
+<script>
+
+    // FOR LEARNING PURPOSES ONLY
+    var trickBtn = document.getElementById('btn2');
+    var btn = document.querySelector("#btn1");
+
+    btn.addEventListener('click', function (){
+        alert('you clicked the button');
+
+        //bottom two lines remove the event listeners when you click frst button
+        trickBtn.removeEventListener('click', trickUser);
+        document.body.removeEventListener('click', trickUser);
+    });
+
+    var trickUser = function (){
+        window.location.href = "website";
+    }
+
+    trickBtn.addEventListener('click', trickUser);
+    document.body.addEventListener('click', trickUser);
+
+</script>
+</body>
+</html>
