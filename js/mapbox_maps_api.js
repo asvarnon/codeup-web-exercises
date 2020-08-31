@@ -20,3 +20,9 @@ geocode("2900 Wind River Ln # 130, Denton, TX 76210", mapboxToken)
 
 
 });
+
+var restuarants = [
+    {name: "Sidewalk Cafe", address: "2900 Wind River Ln # 130, Denton, TX 76210"},
+    {name: "Raising Canes", address: "1511 S Loop 288, Denton, TX 76205"},
+    {name: "Pi Squared Pizza", address: "3200 S Interstate 35 #1150, Denton, TX 76210"}
+]
