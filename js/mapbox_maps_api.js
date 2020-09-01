@@ -36,3 +36,18 @@ restaurants.forEach(function (restaurant) {
         });
 });
 
+var zoomSelect = document.querySelector('#zoom-select');
+
+zoomSelect.addEventListener('change', function (){
+    console.log(zoomSelect);
+    //var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
+    // gets the zoomSelect, of the options, it targets the index of the option and fetches the value of it.
+
+    var zoomValue = zoomSelect.value;
+    //another way.
+    map.setZoom(zoomValue);
+});
+
+
+
+
