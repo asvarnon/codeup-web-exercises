@@ -13,12 +13,13 @@ var restaurants = [
     {name: "Pi Squared Pizza", address: "3200 S Interstate 35 #1150, Denton, TX 76210", info: "Great Pizza!"}
 ]
 
-restaurants.forEach(function (restaurant, mapboxToken, map) {
+restaurants.forEach(function (restaurant) {
+    console.log('In the forEach', restaurant);
     geocode(restaurant.address, mapboxToken)
         .then(function (result) {
 
             var popup = new mapboxgl.Popup()
-                .setHTML(restaurant.info)
+                .setHTML(restaurant.name)
                 // .addTo(map);
 
             var marker = new mapboxgl.Marker()
@@ -26,7 +27,7 @@ restaurants.forEach(function (restaurant, mapboxToken, map) {
                 .addTo(map)
                 .setPopup(popup);
 
-            popup.addTo(map);
+            // popup.addTo(map);
 
 
             // marker.setPopup(popup);
