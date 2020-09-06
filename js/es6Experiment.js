@@ -13,7 +13,11 @@ const sayHelloArrow = (name = "Austin") => {
     return `Hello, ${name}. I am Joe`;
 }
 
-
+const name = "Austin";
+const person = {
+    name,
+    age: 26
+}
 
 
 
