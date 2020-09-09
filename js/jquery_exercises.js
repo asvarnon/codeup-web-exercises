@@ -12,20 +12,20 @@ $('.codeup').css('border', '1px solid red');
 
 $('li, .codeup').css("font-size", "20px");
 
-// $('#title-main').click(() => {
-//     alert('This is the main header.');
-// });
+$('h1').click(function() {
+    $(this).css('background-color', 'green');
+});
 
-// $('#title-main').dblclick(() => {
-//     alert('This is the main header that was double clicked.');
-// });
+$('p').dblclick(function() {
+    $(this).css('font-size', '18px');
+});
 
-$('#title-main').hover(
-    () => {
-        $(this).css('background-color', '#FF0');
+$('li').hover(
+    function() {
+        $(this).css('background-color', 'red');
     },
-    () => {
-        $(this).css('background-color', '#FFF');
+    function() {
+        $(this).css('background-color', 'white');
     });
 
 //note from Kenneth, Tailwind is a css framework that is similar to bootstrap
