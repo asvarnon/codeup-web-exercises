@@ -4,28 +4,32 @@
 //     alert('the DOM has finished loading!');
 //     });
 
-$('#container').css('border', '1px solid black');
+$(document).ready(function(){
 
-$('.important').css('background-color', 'yellow');
+    $('#container').css('border', '1px solid black');
 
-$('.codeup').css('border', '1px solid red');
+    $('.important').css('background-color', 'yellow');
 
-$('li, .codeup').css("font-size", "20px");
+    $('.codeup').css('border', '1px solid red');
 
-$('h1').click(function() {
-    $(this).css('background-color', 'green');
-});
+    $('li, .codeup').css("font-size", "20px");
 
-$('p').dblclick(function() {
-    $(this).css('font-size', '18px');
-});
-
-$('li').hover(
-    function() {
-        $(this).css('background-color', 'red');
-    },
-    function() {
-        $(this).css('background-color', 'white');
+    $('h1').click(function() {
+        $(this).css('background-color', 'green');
     });
 
+    $('p').dblclick(function() {
+        $(this).css('font-size', '18px');
+    });
+
+    $('li').hover(
+        function() {
+            $(this).css('background-color', 'red');
+        },
+        function() {
+            $(this).css('background-color', 'white');
+        });
+
+
+});
 //note from Kenneth, Tailwind is a css framework that is similar to bootstrap
