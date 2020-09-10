@@ -4,6 +4,7 @@
 //     alert('the DOM has finished loading!');
 //     });
 
+
 $(document).ready(function(){
 
     $('#container').css('border', '1px solid black');
@@ -29,6 +30,12 @@ $(document).ready(function(){
         function() {
             $(this).css('background-color', 'yellow');
         });
+
+    $('#textfield').keydown(function(event) {
+        console.log("the " + event.key + " key was pressed");
+        // console.log(`the keycode is ${event.keyCode}`);
+        $('#result').append(event.key);
+    });
 
 
 });
