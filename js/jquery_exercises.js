@@ -24,10 +24,10 @@ $(document).ready(function(){
 
     $('li').hover(
         function() {
-            $(this).css('background-color', 'red');
+            $(this).css('text-decoration', 'line-through');
         },
         function() {
-            $(this).css('background-color', 'white');
+            $(this).css('text-decoration', 'line-through');
         });
 
 
