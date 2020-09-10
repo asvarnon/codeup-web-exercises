@@ -14,8 +14,8 @@ $(document).ready(function(){
 
     $('li, .codeup').css("font-size", "20px");
 
-    $('h1').click(function() {
-        $(this).css('background-color', 'green');
+    $('li').click(function() {
+        $(this).css('text-decoration', 'line-through');
     });
 
     $('p').dblclick(function() {
@@ -24,10 +24,10 @@ $(document).ready(function(){
 
     $('li').hover(
         function() {
-            $(this).css('text-decoration', 'line-through');
+            $(this).css('background-color', 'blue');
         },
         function() {
-            $(this).css('text-decoration', 'line-through');
+            $(this).css('background-color', 'yellow');
         });
 
 
