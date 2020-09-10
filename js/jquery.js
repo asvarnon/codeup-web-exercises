@@ -1,7 +1,7 @@
 "use strict";
 
 var inputList = [];
-const cheatCodeKeyID = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+var cheatCodeKeyID = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
 
 $(document).ready(function (){
 
@@ -22,11 +22,14 @@ $(document).ready(function (){
                 inputList = [];
             }
         }
+        if (event.keyCode === 13 && inputList[10] === cheatCodeKeyID[10]) {
+            alert('Cheat Enabled');
+        }
     });
 
-    $(document).keyup(function(event){
-
-    });
+    // $(document).keyup(function(event){
+    //     if (event.keyCode === 13 && i)
+    // });
 
 
 
