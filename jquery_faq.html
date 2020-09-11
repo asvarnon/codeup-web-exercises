@@ -23,6 +23,14 @@
 </head>
 <body>
 
+<div id="register-popup">
+    <h2 id="registration-check">Register for site here<i id="registration-arrow" class="far fa-arrow-alt-circle-right"></i></h2>
+</div>
+
+<div id="newsletter-heading">
+    <h1>Would you like to sign up for our newsletter?<i id="exit-btn" class="fas fa-times-circle"></i></h1>
+</div>
+
 <button id="np-button">Click Here</button>
 
 <h3>Zion</h3>
@@ -86,11 +94,12 @@
 
 
 <script src="js/http_code.jquery.com_jquery-3.5.1.js"></script>
-
+<script src="https://kit.fontawesome.com/1c5cd66d64.js" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
         // $('dt').addClass('question');
-        $('dd').addClass('answer').addClass('invisible');;
+        $('ul').hide();
+        $('dd').addClass('answer').addClass('invisible');
         // $('dd').addClass('invisible');
         $('#visibility').click(function(){
             $('dd').toggleClass('invisible');
@@ -107,14 +116,30 @@
             });
         });
 
-        $('h3').click(function(){
-            $(this).next().children().toggleClass('bold');
+
+        $('h3').each(function(index, element) {
+            $(element).click(function(){
+                $(element).next().toggle();
+            })
+            // $(this).next().children().toggleClass('bold');
         });
 
         $('li').click(function(){
             $(this).parent().children().first().toggleClass('blue-text');
         });
 
+        $('#exit-btn').click(function (){
+            $('#newsletter-heading').hide();
+        });
+
+        // $('#register-popup').setTimeout(function(){
+        //     $('#registration-check').fadeIn(2000);
+        // }, 8000);
+        // $('#register-popup').fadeIn(8000);
+
+        $('#registration-arrow').click(function(){
+            $('#registration-check').fadeOut(1000);
+        })
 
     });
 </script>

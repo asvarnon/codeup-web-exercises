@@ -25,9 +25,9 @@
 
 <h1 id="title">National Parks</h1>
 
-<button id="hide-btn">hide title</button>
-<button id="show-btn">show title</button>
-<button id="toggle-btn">toggle title</button>
+<button id="hide-btn">hide title/slide up</button>
+<button id="show-btn">show title/slide down</button>
+<button id="toggle-btn">toggle title/slide toggle</button>
 
 
 
@@ -98,18 +98,21 @@
 
         $('#hide-btn').click(function (){
             // $('#title').hide();
-            $('#title').fadeOut();
+            // $('#title').fadeOut();
+            $('#title').slideUp();
         });
 
         $('#show-btn').click(function (){
             // $('#title').show();
-            $('#title').fadeIn();
+            // $('#title').fadeIn();
+            $('#title').slideDown();
         });
 
         $('#toggle-btn').click(function (){
             // $('#title').toggle();
             //time in milliseconds, put in parameter
-            $('#title').fadeToggle(2500);
+            // $('#title').fadeToggle(2500);
+            $('#title').slideToggle();
         });
 
     });
