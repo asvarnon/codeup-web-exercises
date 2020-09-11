@@ -97,15 +97,19 @@
     $(document).ready(function(){
 
         $('#hide-btn').click(function (){
-            $('#title').hide();
+            // $('#title').hide();
+            $('#title').fadeOut();
         });
 
         $('#show-btn').click(function (){
-            $('#title').show();
+            // $('#title').show();
+            $('#title').fadeIn();
         });
 
         $('#toggle-btn').click(function (){
-            $('#title').toggle();
+            // $('#title').toggle();
+            //time in milliseconds, put in parameter
+            $('#title').fadeToggle(2500);
         });
 
     });
