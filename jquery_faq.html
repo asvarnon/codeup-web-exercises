@@ -12,6 +12,12 @@
             background-color: yellow;
             font-weight: bold;
         }
+        .bold {
+            font-weight: bold;
+        }
+        .blue-text {
+            color: blue;
+        }
     </style>
 
 </head>
@@ -83,22 +89,31 @@
 
 <script>
     $(document).ready(function(){
-        // // $('dt').addClass('question');
-        // $('dd').addClass('answer').addClass('invisible');;
-        // // $('dd').addClass('invisible');
-        // $('#visibility').click(function(){
-        //     $('dd').toggleClass('invisible');
-        // });
-        //
-        // $('dt').click(function(){
-        //     console.log(this);
-        //     $(this).toggleClass('highlight');
-        // });
-
-        $('#np-button').click(function(){
-            $('.national-park-list').children().last().toggleClass('highlight');
+        // $('dt').addClass('question');
+        $('dd').addClass('answer').addClass('invisible');;
+        // $('dd').addClass('invisible');
+        $('#visibility').click(function(){
+            $('dd').toggleClass('invisible');
         });
 
+        $('dt').click(function(){
+            console.log(this);
+            $(this).toggleClass('highlight');
+        });
+
+        $('#np-button').click(function(){
+            $('ul').each(function(index, element) {
+            $(this).children().last().toggleClass('highlight');
+            });
+        });
+
+        $('h3').click(function(){
+            $(this).next().children().toggleClass('bold');
+        });
+
+        $('li').click(function(){
+            $(this).parent().children().first().toggleClass('blue-text');
+        });
 
 
     });
