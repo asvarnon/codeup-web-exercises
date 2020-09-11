@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traversing</title>
+</head>
+<body>
+
+
+<dl>
+    <dt id="q-1">Q: Can I drive my private vehicle into Zion Canyon?</dt>
+    <dd id="a-1">A: From March through November, access to the Zion Canyon Scenic Drive is by shuttle bus only. Private vehicles are allowed to access the Scenic Drive only when the Shuttle System is not in operation.
+    </dd>
+
+    <dt id="q-2">Q: Can I bicycle into Zion Canyon?</dt>
+    <dd id="a-2">A: Bicycles are allowed on the Zion Canyon Scenic Drive. Due to safety concerns cyclists are required to pull over and stop when approached from behind by a shuttle bus. Do not pass a moving shuttle bus.
+    </dd>
+
+    <dt id="q-3">Q: Can commercial buses enter Zion Canyon?</dt>
+    <dd id="a-3">A: Commercial tour buses can only drive directly to the Lodge if they have advanced reservations at the Zion Lodge. Commercial buses are not allowed to drive anywhere else in the canyon from March through November. Commerical buses are able to park in designated areas only - not in the shuttle stops.</dd>
+
+    <dt id="q-4">Q: Are food services available in Zion Canyon?</dt>
+    <dd id="a-4">A: Zion Lodge operates a restaurant year round and a snack bar during the busy season.</dd>
+
+    <dt id="q-5">Q: Is there any camping in Zion Canyon?</dt>
+    <dd id="a-5">A: No. Closest camping is available in Watchman and South campgrounds, located near the south entrance.</dd>
+
+    <dt id="q-6">Q: Where can I go swimming in the canyon?</dt>
+    <dd id="a-6">A: Anywhere in the Virgin River. Tubing is not allowed within the park, but may be done in Springdale. Swimming is not allowed in the Emerald Pools. </dd>
+
+    <dt id="q-7">Q: How often do rock falls occur in the park & does anyone ever get hurt?</dt>
+    <dd id="a-7">A: Rockfalls are very common in Zion.</dd>
+
+    <dt id="q-8">Q: What is a red permit? Do I need one?</dt>
+    <dd id="a-8">A: Red permits are issued for overnight guests of the Zion Lodge. They are required to park in the lodge parking lot.</dd>
+    <!-- Other terms and descriptions -->
+</dl>
+
+<script src="js/http_code.jquery.com_jquery-3.5.1.js"></script>
+<script src="js/jquery_exercises.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        var dts = $('dt');
+        //jquery each method
+        dts.each(function(index, element){
+            if(index % 2 === 0) {
+                $(element).css('background-color', 'lightblue');
+            }
+        });
+
+        //jquery first method
+        dts.first().css('background-color', 'yellow');
+
+        //jquery last method
+        dts.last().css('background-color', 'yellow');
+
+
+    });
+</script>
+
+</body>
+</html>
