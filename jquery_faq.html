@@ -8,6 +8,10 @@
         .invisible {
             visibility: hidden;
         }
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
     </style>
 
 </head>
@@ -49,14 +53,17 @@
 <script src="js/jquery_exercises.js"></script>
 <script>
     $(document).ready(function(){
-        $('dt').addClass('question');
+        // $('dt').addClass('question');
         $('dd').addClass('answer').addClass('invisible');;
         // $('dd').addClass('invisible');
         $('#visibility').click(function(){
             $('dd').toggleClass('invisible');
         });
 
-
+        $('dt').click(function(){
+            console.log(this);
+            $(this).toggleClass('highlight');
+        });
 
 
 
