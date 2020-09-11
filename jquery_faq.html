@@ -17,8 +17,10 @@
 </head>
 <body>
 
+<button id="np-button">Click Here</button>
+
 <h3>Zion</h3>
-<ul id="zion-list">
+<ul class="national-park-list" id="zion-list">
     <li>Four life zones exist inside the park: riparian, woodland, Coniferous forest, and desert.</li>
     <li>Evidence of Zion’s earliest inhabitants dates back over 8,000 years.</li>
     <li>An endangered species resides in the park: the California Condor.</li>
@@ -26,7 +28,7 @@
 </ul>
 
 <h3>Yosemite</h3>
-<ul id="yosemite-list">
+<ul class="national-park-list" id="yosemite-list">
     <li>Yosemite’s granite rock formations glow like fire at sunset.</li>
     <li>Home to one of the tallest waterfalls in the world at 2,425 feet</li>
     <li>One of the few places in the U.S. where you can see a rainbow at night. </li>
@@ -34,7 +36,7 @@
 </ul>
 
 <h3>Grand teton</h3>
-<ul id="grand-teton-list">
+<ul class="national-park-list" id="grand-teton-list">
     <li>Grand Teton National Park's elevation ranges from 6.400 feet to 13,775 feet.</li>
     <li>Grand Teton National Park is only 10 miles south of another famous park - Yellowstone National Park.</li>
     <li>There are 12 small glaciers in Grand Teton National Park. The largest is Teton Glacier at Grant Teton's north side peak.</li>
@@ -81,18 +83,21 @@
 
 <script>
     $(document).ready(function(){
-        // $('dt').addClass('question');
-        $('dd').addClass('answer').addClass('invisible');;
-        // $('dd').addClass('invisible');
-        $('#visibility').click(function(){
-            $('dd').toggleClass('invisible');
-        });
+        // // $('dt').addClass('question');
+        // $('dd').addClass('answer').addClass('invisible');;
+        // // $('dd').addClass('invisible');
+        // $('#visibility').click(function(){
+        //     $('dd').toggleClass('invisible');
+        // });
+        //
+        // $('dt').click(function(){
+        //     console.log(this);
+        //     $(this).toggleClass('highlight');
+        // });
 
-        $('dt').click(function(){
-            console.log(this);
-            $(this).toggleClass('highlight');
+        $('#np-button').click(function(){
+            $('.national-park-list').children().last().toggleClass('highlight');
         });
-
 
 
 
