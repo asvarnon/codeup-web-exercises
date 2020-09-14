@@ -30,28 +30,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="ajax-blog.html"></script>
-<script>
-(function(){
-    "use strict";
-
-    $.ajax("data/blog.json").done(function(data) {
-        console.log(data);
-        let blogPost = "";
-        for(let i = 0; i < data.length; i++){
-            blogPost +=
-                "<div>"+
-                "<h2>"+ data[i].title +"</h2>"+
-                "<h6> Theme: "+ data[i].categories +"</h6>"+
-                "<p>"+ data[i].date +"</p>"+
-                "<p>"+ data[i].content +"</p>"+
-                "</div>";
-        }
-        $('#posts').append(blogPost);
-    });
-
-
-
-})();
+<script src="js/blog.js">
+// (function(){
+//     "use strict";
+//
+//     $.ajax("data/blog.json").done(function(data) {
+//         console.log(data);
+//         let blogPost = "";
+//         for(let i = 0; i < data.length; i++){
+//             blogPost +=
+//                 "<div>"+
+//                 "<h2>"+ data[i].title +"</h2>"+
+//                 "<h6> Theme: "+ data[i].categories +"</h6>"+
+//                 "<p>"+ data[i].date +"</p>"+
+//                 "<p>"+ data[i].content +"</p>"+
+//                 "</div>";
+//         }
+//         $('#posts').append(blogPost);
+//     });
+//
+//
+//
+// })();
 </script>
 
 </body>
