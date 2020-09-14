@@ -5,7 +5,6 @@
             "city": "Dallas",
             "state": "Texas"
                 },
-    "arrayOfStudents": ["student1", "student2"],
     "arrayOfObjectsStudents": [
         {
         "name": "Stacy R",
@@ -13,7 +12,7 @@
             "year": 1990,
             "month": 1,
             "day": 24
-        }
+                }
         "scholarship": true,
         "capstone": null
         },
@@ -23,7 +22,7 @@
             "year": 1992,
             "month": 5,
             "day": 13
-            }
+                }
         "scholarship": false,
         "capstone": null
         }
