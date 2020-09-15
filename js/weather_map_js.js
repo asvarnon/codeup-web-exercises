@@ -78,6 +78,14 @@
             $('#forecast').append(forecast);
         });
 
+        //TODO: get searchbar working. Keep on branch until finished.
+
+        var searchLocation = $('#search-bar').val();
+
+        $("#search-button").click(function (){
+            console.log(searchLocation);
+        });
+
 
     });
 
