@@ -1,7 +1,7 @@
 (function(){
     "use strict";
 
-    $.get("data/blog.json").done(function(data) {
+    $.ajax("data/blog.json").done(function(data) {
         console.log(data);
         let blogPost = "";
         for(let i = 0; i < data.length; i++){
