@@ -46,7 +46,7 @@
 
     const inventoryList = () => {
         $('#insertProducts').empty();
-        $.ajax("data/inventory.json").done(function(data) {
+        $.get("data/inventory.json").done(function(data) {
             console.log(data);
             let finalTBody = "";
             for (let i = 0; i < data.length; i++) {
@@ -65,7 +65,6 @@
     inventoryList();
 
     $("#refresh").click(function(){
-        $('#insertProducts').html();
         inventoryList();
     });
 
