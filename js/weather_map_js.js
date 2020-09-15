@@ -22,7 +22,20 @@
             let forecast = "";
             // for(let i = 0; i < data.length; i++){
                 forecast +=
-                    "<div>\n" +
+                    "<div class='border rounded-sm'>\n" +
+                    "<div class=\"card-header\">\n" + data.list[0].dt_txt +
+                    "        </div>\n" +
+                    "        <ul class=\"list-group list-group-flush\">\n" +
+                    "            <li class=\"list-group-item\">"+ data.list[0].main.temp +"</li>\n" +
+                    "            <li class=\"list-group-item\">"+ data.list[0].dt_txt +"</li>\n" +
+                    "            <li class=\"list-group-item\">"+ data.list[0].weather.description +"</li>\n" +
+                    "            <li class=\"list-group-item\">"+ data.list[0].main.humidity +"</li>\n" +
+                    "            <li class=\"list-group-item\">"+ data.list[0].wind.speed+"</li>\n" +
+                    "            <li class=\"list-group-item\">"+ data.list[0].main.pressure +"</li>\n" +
+                    "        </ul>" +
+                    "</div>"
+                    +
+                    "<div class='border rounded-sm'>\n" +
                     "<div class=\"card-header\">\n" + data.city.name +
                     "        </div>\n" +
                     "        <ul class=\"list-group list-group-flush\">\n" +
@@ -32,7 +45,7 @@
                     "        </ul>" +
                     "</div>"
                     +
-                    "<div>\n" +
+                    "<div class='border rounded-sm'>\n" +
                     "<div class=\"card-header\">\n" + data.city.name +
                     "        </div>\n" +
                     "        <ul class=\"list-group list-group-flush\">\n" +
@@ -42,7 +55,7 @@
                     "        </ul>" +
                     "</div>"
                     +
-                    "<div>\n" +
+                    "<div class='border rounded-sm'>\n" +
                     "<div class=\"card-header\">\n" + data.city.name +
                     "        </div>\n" +
                     "        <ul class=\"list-group list-group-flush\">\n" +
@@ -52,17 +65,7 @@
                     "        </ul>" +
                     "</div>"
                     +
-                    "<div>\n" +
-                    "<div class=\"card-header\">\n" + data.city.name +
-                    "        </div>\n" +
-                    "        <ul class=\"list-group list-group-flush\">\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.temp +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].dt_txt +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.feels_like +"</li>\n" +
-                    "        </ul>" +
-                    "</div>"
-                    +
-                    "<div>\n" +
+                    "<div class='border rounded-sm'>\n" +
                     "<div class=\"card-header\">\n" + data.city.name +
                     "        </div>\n" +
                     "        <ul class=\"list-group list-group-flush\">\n" +
