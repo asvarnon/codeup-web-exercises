@@ -45,7 +45,6 @@
                 "        </div>\n" +
                 "        <ul class=\"list-group list-group-flush\">\n" +
                 "            <li class=\"list-group-item\">" + day.main.temp + "</li>\n" +
-                "            <li class=\"list-group-item\">" + day.dt_txt + "</li>\n" +
                 "            <li class=\"list-group-item\">" + day.weather.description + "</li>\n" +
                 "            <li class=\"list-group-item\">" + day.main.humidity + "</li>\n" +
                 "            <li class=\"list-group-item\">" + day.wind.speed + "</li>\n" +
