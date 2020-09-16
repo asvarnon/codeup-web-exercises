@@ -16,8 +16,8 @@
             var openForecastAPIURL = "http://api.openweathermap.org/data/2.5/forecast";
             $.get(openForecastAPIURL, {
                 "APPID": OWM_Key,
-                "lat": lng,
-                "lon": lat,
+                "lat": lat,
+                "lon": lng,
                 "units": "imperial"
             }).done(function (data) {
                 console.log(data);
@@ -41,15 +41,15 @@
             // for(let i = 0; i < data.list.length; i++){
             forecastForDay +=
                 "<div class='border rounded-sm'>\n" +
-                "<div class=\"card-header\">\n" + data.list[0].dt_txt +
+                "<div class=\"card-header\">\n" + day.list[0].dt_txt +
                 "        </div>\n" +
                 "        <ul class=\"list-group list-group-flush\">\n" +
-                "            <li class=\"list-group-item\">" + data.list[0].main.temp + "</li>\n" +
-                "            <li class=\"list-group-item\">" + data.list[0].dt_txt + "</li>\n" +
-                "            <li class=\"list-group-item\">" + data.list[0].weather.description + "</li>\n" +
-                "            <li class=\"list-group-item\">" + data.list[0].main.humidity + "</li>\n" +
-                "            <li class=\"list-group-item\">" + data.list[0].wind.speed + "</li>\n" +
-                "            <li class=\"list-group-item\">" + data.list[0].main.pressure + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.list[0].main.temp + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.list[0].dt_txt + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.list[0].weather.description + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.list[0].main.humidity + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.list[0].wind.speed + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.list[0].main.pressure + "</li>\n" +
                 "        </ul>" +
                 "</div>"
             // }
@@ -59,6 +59,7 @@
         function searchFunc (input) {
             geocode(input, mapboxToken)
                 .then(function (result) { //first get weather data
+                    console.log(result);
                     weatherData(result[0], result[1]);
                     return result;
                 }).then(function (data){ //then go to this location
