@@ -41,15 +41,15 @@
             // for(let i = 0; i < data.list.length; i++){
             forecastForDay +=
                 "<div class='border rounded-sm'>\n" +
-                "<div class=\"card-header\">\n" + day.list[0].dt_txt +
+                "<div class=\"card-header\">\n" + day.dt_txt +
                 "        </div>\n" +
                 "        <ul class=\"list-group list-group-flush\">\n" +
-                "            <li class=\"list-group-item\">" + day.list[0].main.temp + "</li>\n" +
-                "            <li class=\"list-group-item\">" + day.list[0].dt_txt + "</li>\n" +
-                "            <li class=\"list-group-item\">" + day.list[0].weather.description + "</li>\n" +
-                "            <li class=\"list-group-item\">" + day.list[0].main.humidity + "</li>\n" +
-                "            <li class=\"list-group-item\">" + day.list[0].wind.speed + "</li>\n" +
-                "            <li class=\"list-group-item\">" + day.list[0].main.pressure + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.main.temp + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.dt_txt + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.weather.description + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.main.humidity + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.wind.speed + "</li>\n" +
+                "            <li class=\"list-group-item\">" + day.main.pressure + "</li>\n" +
                 "        </ul>" +
                 "</div>"
             // }
@@ -81,6 +81,7 @@
 
         });
 
+        searchFunc("Dallas, TX");
 
     });
 
