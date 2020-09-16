@@ -3,32 +3,43 @@
 
     $(document).ready(function(){
 
-        var openWeatherAPIURL = "http://api.openweathermap.org/data/2.5/weather";
-        $.get(openWeatherAPIURL,{
-            "APPID": OWM_Key,
-            "q": "Dallas, TX, US",
-            "units": "imperial"
-        }).done(function(data){
-            // console.log(data);
-        })
-
-        var openForecastAPIURL = "http://api.openweathermap.org/data/2.5/forecast";
-        $.get(openForecastAPIURL, {
-            "APPID": OWM_Key,
-            "lat": lng,
-            "lon": lat,
-            "units": "imperial"
-        }).done(function(data) {
-            console.log(data);
-
-
-            $('#forecast').append(forecast);
+        mapboxgl.accessToken = mapboxToken;
+        let map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-96.8084, 27.7799], // starting position [lng, lat]
+            zoom: 3,
         });
 
-        function createCard(day) = {
-            let forecast = [];
-            for(let i = 0; i < data.list.length; i++){
-            forecast +=
+
+        function weatherData(lng, lat) {
+            var openForecastAPIURL = "http://api.openweathermap.org/data/2.5/forecast";
+            $.get(openForecastAPIURL, {
+                "APPID": OWM_Key,
+                "lat": lng,
+                "lon": lat,
+                "units": "imperial"
+            }).done(function (data) {
+                console.log(data);
+                let fiveDayForecast = [];
+                for (let i = 0; i < data.list.length; i += 8) {
+                    fiveDayForecast.push(data.list[i]);
+                }
+
+                $('#city').text(data.city.name);
+                $('#forecast').html("");
+
+                for (let day of fiveDayForecast) {
+                    createCard(day);
+                }
+            });
+        }
+
+
+        function createCard(day) {
+            let forecastForDay = "";
+            // for(let i = 0; i < data.list.length; i++){
+            forecastForDay +=
                 "<div class='border rounded-sm'>\n" +
                 "<div class=\"card-header\">\n" + data.list[0].dt_txt +
                 "        </div>\n" +
@@ -41,17 +52,31 @@
                 "            <li class=\"list-group-item\">" + data.list[0].main.pressure + "</li>\n" +
                 "        </ul>" +
                 "</div>"
-        }
+            // }
+            $('#forecast').append(forecastForDay);
         }
 
-        function citySearch(input) {
-            var city
-        };
+        function searchFunc (input) {
+            geocode(input, mapboxToken)
+                .then(function (result) { //first get weather data
+                    weatherData(result[0], result[1]);
+                    return result;
+                }).then(function (data){ //then go to this location
+                    map.flyTo({center: data, zoom: 12});
 
+                let marker = new mapboxgl.Marker({draggable: true})
+                    .setLngLat(data)
+                    .addTo(map)
+                });
+        }
 
         $("#search-button").click(function (e){
             e.preventDefault();
-            var searchLocation = $('#search-bar').val().trim();
+            let searchLocation = $('#search-bar').val().trim();
+            if (searchLocation !== ""){
+                searchFunc(searchLocation);
+                $('#search-bar').val(""); //reset search box after searched location
+            }
 
         });
 
