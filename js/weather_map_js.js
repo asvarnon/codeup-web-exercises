@@ -15,75 +15,44 @@
         var openForecastAPIURL = "http://api.openweathermap.org/data/2.5/forecast";
         $.get(openForecastAPIURL, {
             "APPID": OWM_Key,
-            "q": "Dallas, TX, US",
+            "lat": lng,
+            "lon": lat,
             "units": "imperial"
-        }).done(function(data){
+        }).done(function(data) {
             console.log(data);
-            let forecast = "";
-            // for(let i = 0; i < data.length; i++){
-                forecast +=
-                    "<div class='border rounded-sm'>\n" +
-                    "<div class=\"card-header\">\n" + data.list[0].dt_txt +
-                    "        </div>\n" +
-                    "        <ul class=\"list-group list-group-flush\">\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.temp +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].dt_txt +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].weather.description +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.humidity +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].wind.speed+"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.pressure +"</li>\n" +
-                    "        </ul>" +
-                    "</div>"
-                    +
-                    "<div class='border rounded-sm'>\n" +
-                    "<div class=\"card-header\">\n" + data.city.name +
-                    "        </div>\n" +
-                    "        <ul class=\"list-group list-group-flush\">\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.temp +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].dt_txt +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.feels_like +"</li>\n" +
-                    "        </ul>" +
-                    "</div>"
-                    +
-                    "<div class='border rounded-sm'>\n" +
-                    "<div class=\"card-header\">\n" + data.city.name +
-                    "        </div>\n" +
-                    "        <ul class=\"list-group list-group-flush\">\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.temp +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].dt_txt +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.feels_like +"</li>\n" +
-                    "        </ul>" +
-                    "</div>"
-                    +
-                    "<div class='border rounded-sm'>\n" +
-                    "<div class=\"card-header\">\n" + data.city.name +
-                    "        </div>\n" +
-                    "        <ul class=\"list-group list-group-flush\">\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.temp +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].dt_txt +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.feels_like +"</li>\n" +
-                    "        </ul>" +
-                    "</div>"
-                    +
-                    "<div class='border rounded-sm'>\n" +
-                    "<div class=\"card-header\">\n" + data.city.name +
-                    "        </div>\n" +
-                    "        <ul class=\"list-group list-group-flush\">\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.temp +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].dt_txt +"</li>\n" +
-                    "            <li class=\"list-group-item\">"+ data.list[0].main.feels_like +"</li>\n" +
-                    "        </ul>" +
-                    "</div>";
+
 
             $('#forecast').append(forecast);
         });
 
-        //TODO: get searchbar working. Keep on branch until finished.
+        function createCard(day) = {
+            let forecast = [];
+            for(let i = 0; i < data.list.length; i++){
+            forecast +=
+                "<div class='border rounded-sm'>\n" +
+                "<div class=\"card-header\">\n" + data.list[0].dt_txt +
+                "        </div>\n" +
+                "        <ul class=\"list-group list-group-flush\">\n" +
+                "            <li class=\"list-group-item\">" + data.list[0].main.temp + "</li>\n" +
+                "            <li class=\"list-group-item\">" + data.list[0].dt_txt + "</li>\n" +
+                "            <li class=\"list-group-item\">" + data.list[0].weather.description + "</li>\n" +
+                "            <li class=\"list-group-item\">" + data.list[0].main.humidity + "</li>\n" +
+                "            <li class=\"list-group-item\">" + data.list[0].wind.speed + "</li>\n" +
+                "            <li class=\"list-group-item\">" + data.list[0].main.pressure + "</li>\n" +
+                "        </ul>" +
+                "</div>"
+        }
+        }
 
-        var searchLocation = $('#search-bar').val();
+        function citySearch(input) {
+            var city
+        };
 
-        $("#search-button").click(function (){
-            console.log(searchLocation);
+
+        $("#search-button").click(function (e){
+            e.preventDefault();
+            var searchLocation = $('#search-bar').val().trim();
+
         });
 
 
