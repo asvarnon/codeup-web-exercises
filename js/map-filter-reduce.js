@@ -37,11 +37,14 @@ const users = [
         yearsOfExperience: 9
     }
 ];
-let threeOrMore = [];
+const threeOrMore = [];
 let usersLanguages = users.filter((user) => {
     if ( user.languages[2] !== undefined ) threeOrMore.push(user);
 });
 console.log(threeOrMore);
 
 
+const emailAddresses = [];
+let userEmails = users.map((user) => { emailAddresses.push(user.email); })
+console.log(emailAddresses);
 
