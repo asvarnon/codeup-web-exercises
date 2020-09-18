@@ -49,12 +49,8 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach((user) => {
-  return emails.push(user.email);
-});
-users.forEach((user) => {
-  return names.push(user.name);
-});
+users.forEach((user) => { emails.push(user.email) }); //dont need curly braces for single line
+users.forEach((user) => names.push(user.name)); //like this example
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
