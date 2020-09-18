@@ -48,3 +48,11 @@ const emailAddresses = [];
 let userEmails = users.map((user) => { emailAddresses.push(user.email); })
 console.log(emailAddresses);
 
+
+const totalYears = users.reduce((yearCount, user) => {
+    return yearCount + user.yearsOfExperience
+}, 0);
+console.log(totalYears);
+
+let avgYearsOfExperience = totalYears/users.length;
+console.log(avgYearsOfExperience);
