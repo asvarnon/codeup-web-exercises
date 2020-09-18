@@ -76,21 +76,15 @@ const instructors  = users.reduce((instructor, user) => {
 }, "")
 console.log(`Your instructors are: ${instructors}`);
 
-// const instructorLanguages = users.reduce((languages, user) => {
-//     for (let language of user.languages) {
-//         if (!languages.includes(language)) {
-//             languages.push(language);
-//         }
-//     }
-// }, []);
-
 const instructorLanguages = users.reduce((languages, user) => {
-    for (let i = 0; i <user.languages.length; i++) {
-        if (!languages.includes(user.languages[i])) {
-            languages.push(user.languages[i]);
+    for (let language of user.languages) {
+        if (!languages.includes(language)) {
+            languages.push(language);
         }
     }
+    return languages;
 }, []);
+
 console.log(instructorLanguages);
 
 
