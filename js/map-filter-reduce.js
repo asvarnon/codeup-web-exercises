@@ -56,3 +56,27 @@ console.log(totalYears);
 
 let avgYearsOfExperience = totalYears/users.length;
 console.log(avgYearsOfExperience);
+
+//FIRST PROP ACTS AS A BLANK COUNTER. Starts with empty string
+//first If statement pushes first in array to act as a comparable as "longestEmail". THEN compares that
+// to the rest of the emails
+const longestEmail = users.reduce((longestEmail, user) => {
+    if (user.email.length > longestEmail.length) {
+        return user.email;
+    } else {
+        return longestEmail;
+    }
+}, "");
+console.log(longestEmail);
+
+
+const instructors  = users.reduce((instructor, user) => {
+    if (instructor === "") { return instructor + user.name}
+    return instructor + ", " +  user.name;
+}, "")
+console.log(`Your instructors are: ${instructors}`);
+
+
+
+
+
