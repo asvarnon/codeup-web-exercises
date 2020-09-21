@@ -42,21 +42,22 @@ const wycatsURL = "https://api.github.com/users/wycats/repos"
 
 const userCommits = (name) => {
     let userURL = `https://api.github.com/users/${name}/events`
-    fetch(userURL, {headers: {'Authorization': githubToken}})
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            let lastCommit = [];
-            for (let event of data){
-                if(event.type === "PushEvent"){
-                    lastCommit.push(event.created_at);
+    return fetch(userURL, {headers: {'Authorization': githubToken}})
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                for (let event of data){
+                    if(event.type === "PushEvent"){
+                        return event.created_at;
+                    }
                 }
-            }
-            console.log(lastCommit);
-        })
-        .catch(error => console.log(error));
+            });
 }
-userCommits("wycats");
+
+//the above function you want to return and retrieve a promise with the date
+
+//once you have the returned promise with the date, THEN you can decide what to do with it.
+userCommits("wycats").then(date => console.log('Last commit date:', date));
 
 
 
