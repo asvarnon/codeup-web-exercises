@@ -41,10 +41,26 @@ const wycatsURL = "https://api.github.com/users/wycats/repos"
 //     .catch(error => console.log(error));
 
 const userCommits = (name) => {
-    let userURL = `https://api.github.com/users/${name}/repos`
+    let userURL = `https://api.github.com/users/${name}/events`
     fetch(userURL, {headers: {'Authorization': githubToken}})
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            let lastCommit;
+            for (let event of data){
+                if(event.type === "PushEvent"){
+                    console.log(event);
+                    lastCommit = {
+                        repo: event.repo.name,
+                        time: new Date(event.createdAt),
+                        commits: event.payload.commits
+                    }
+                }
+                //TODO: figure out how to get this value out.
+                return lastCommit;
+                console.log(lastCommit);
+            }
+        })
         .catch(error => console.log(error));
 }
 userCommits("wycats");
